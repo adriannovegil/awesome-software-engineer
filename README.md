@@ -1,6 +1,8 @@
-# Developer Sel-training Guide
+# Awesome Software Engineer
 
-## Cultura
+A curated list of Software Engineer Topics
+
+## 1. Culture & Tools
 
  * Developer Portal
  * Chat
@@ -8,41 +10,30 @@
  * Idea Portal
  * Colaborative Roadmap
  * Communities
- * Spotify
+ * Organizational Model
 
-## Development
-
-### General
+## 2. General Knowledge
 
  * Developer OS System
   * User Rol (Admin)
   * Setup
   * Tools
   * Performance
-
  * Basic Terminal Usage
-
  * Version Control Systems
   * Basic Usage of Git
   * GIt Repository Tools
-
- * Security
-  * Web Security Knowledge
-   * HTTPS
-   * CORS
-   * Content Security Policy
-   * OWASP Security Risks
-
  * Data structures & Algorithms
   * Datatypes
   * Recursion
   * Searching
   * Sorting
-
  * Release Management
   * Semantinc versioning
 
-### Front-end
+### 3. Front-end
+
+Front-end topics list
 
   * HTML
     * Basics
@@ -144,7 +135,9 @@
   * Performance
   * Observability
 
-### Back-end
+## 4. Back-end
+
+Bront-end topics list
 
   * Databases
     * Relational Databases
@@ -226,16 +219,42 @@
     * Authorization
     * Auditory
 
-### Mobile Web Applications
+## 5. Mobile Web Applications
+
+Mobile topics list
 
   * iOS
   * Android
 
-### Desktop Applications
+### 6. Desktop Applications
+
+Desktop topics list
 
   * Electron
 
-### DevOps
+## 7. Security
+
+### Project Security
+  * Gestión de los repos. Visibilidad, roles, etc.
+  * Gestión del tratamiento de los datos personales
+  * Identify Security Champion
+  * Client Compliance
+  * Pla Continuidad de Negocio
+  * Gestión de la información en la finalización de los proyectos
+    * Almacenamiento de datos del proyecto según regulación
+    * Destrucción de información
+  * Credential Security
+
+### OS Security & Mobile Devices
+  * Antivirus
+
+### Web Security Knowledge
+ * HTTPS
+ * CORS
+ * Content Security Policy
+ * OWASP Security Risks
+
+## 8. DevOps
 
   * Text Manipulation Tools
     * awk, sed, grep, sort, uniq, cat, cut, echo, fmt, tr, nl, egrep, fgrep, wc
@@ -244,7 +263,6 @@
   * Bash Scripting
   * Os Editor
     * vim, nano,
-
  * Infrastructure As Code
   * Containers
     * Docker
@@ -266,15 +284,20 @@
     * Chef
     * Puppet
 
-### Runtime
+## 9. Runtime
+
+Runtime topis list
 
   * Platform
     * On-prem
     * Cloud
     * Hybrid
+    * Serverless
 
+## 10. Observability
 
-### Observability
+Observability topics list
+
   * General Tools
   * Collect
     * Metrics
@@ -299,8 +322,13 @@
     * Act
       * Alerts
       * Triggers
+  * Governance
 
-### Chaos Engineering
+## 11. Profiling, Performance Analysis & Troubleshooting
+
+## 12. site reliability engineering (SRE) & Chaos Engineering
+
+Chaos engineering topics list
 
   * Fault Injection
   * Observability
@@ -308,65 +336,6 @@
   * Cost of SEV's
   * Gamedays
 
-### SRE
+## 13. References
 
-
- Project managerment
- Version control
- Cooperation
- Environment managerment
- Web Hook
- Document managerment
- Flow
- Issue
- Database Scheme managerment
- Response status code managerment
-
-
-
-
- Requiement flaw - The requirement has not been properly identified
-Design flaw - A mistake made while designing the user interface
-Coding flaw - Developer mistake in code syntax or application logic
-Testing flaw - This is due to an issue on the testing method/approach
-Configuration flaw - Invalid configurations within the application environment
-Data flaw - Invalid or bad data issue on the database
-Server flaw - Server configuration or network releated issue
-other - All other causes
-
-
-
- * Cultura
-
- * Planning
- * Analysis
- * Design
- * Implementation
- * Testin & Integration
- * Maintenance
-
-
-
-
-
-
-
- * Governance
-  * Strategy & Metrics
-  * Education & Guidance
-  * Policy & Compliance
-
- * Construction
-  * Threat Assesment
-  * Security Requirements
-  * Secure Architecture
-
- * Verification
-  * Design Review
-  * Code Review
-  * Security Testing
-
- * Operations
-  * Environment Hardening
-  * Vulnerability Managerment
-  * Operational Enablement
+ * https://github.com/donnemartin/system-design-primer
