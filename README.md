@@ -1,341 +1,161 @@
-# Awesome Software Engineer
+# Awesome Software Engineer [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 
-A curated list of Software Engineer Topics
+A curated list of Software Engineer Topics & Tools
 
-## 1. Culture & Tools
+## Contents
 
- * Developer Portal
- * Chat
- * Forums
- * Idea Portal
- * Colaborative Roadmap
- * Communities
- * Organizational Model
+- [1. Culture and Organization Alignment](#1-culture-and-organization-alignment)
+- [2. Management methodology](#2-management-methodology)
+- [3. Collaboration Tools](#3-collaboration-tools)
+- [4. Documentation](#4-documentation)
+- [5. Local Environment](#5-local-environment)
+- [6. Software Development and Best Practices](#6-software-development-and-best-practices)
+- [7. Software Architecture](#7-software-architecture)
+- [8. Source Code Management (SCM)](#8-source-code-management-scm)
+- [9. Source Code Repository Management](#9-source-code-repository-management)
+- [10. Test and Verification](#10-test-and-verification)
+- [11. Artifact or Package Build or Management](#11-artifact-or-package-build-or-management)
+- [12. Configuration Management and Automation](#12-configuration-management-and-automation)
+- [13. API Management](#13-api-management)
+- [14. Database Management](#14-database-management)
+- [15. Source Code Quality](#15-source-code-quality)
+- [16. Release Management](#16-release-management)
+- [17. Continuous Integration (CI) and Delivery or Deployment (CD)](#17-continuous-integration-ci-and-delivery-or-deployment-cd)
+- [18. Containerization and Orchestration](#18-containerization-and-orchestration)
+- [19. Infrastructure Provisioning (IaC)](#19-infrastructure-provisioning-iac)
+- [20. Runtime Environments](#20-runtime-environments)
+- [21. Security, Identity and Compliance](#21-security-identity-and-compliance)
+- [22. Observability (metrics, logs and tracing) and AiOps and Analytics](#22-observability-metrics-logs-and-tracing-and-aiops-and-analytics)
+- [23. Profiling, Performance Analysis and Troubleshooting](#23-profiling-performance-analysis-and-troubleshooting)
+- [24. Site Reliability Engineering (SRE)](#24-site-reliability-engineering-sre)
+- [25. Backup and Disaster Recovering](#25-backup-and-disaster-recovering)
+- [26. Contingency Planning](#26-contingency-planning)
+- [27. References](#27-references)
+- [28. License](#28-license)
+- [29. Contributing](#29-contributing)
 
-## 2. General Knowledge
+## 1. Culture and Organization Alignment
 
- * Developer OS System
-  * User Rol (Admin)
-  * Setup
-  * Tools
-  * Performance
- * Basic Terminal Usage
- * Version Control Systems
-  * Basic Usage of Git
-  * GIt Repository Tools
- * Data structures & Algorithms
-  * Datatypes
-  * Recursion
-  * Searching
-  * Sorting
- * Release Management
-  * Semantinc versioning
+- Developer Portal
+- Chat
+- Forums
+- Idea Portal
+- Colaborative Roadmap
+- Communities
+- Organizational Model
 
-### 3. Front-end
+## 2. Management methodology
+## 3. Collaboration Tools
+## 4. Documentation
+## 5. Local Environment
+## 6. Software Development and Best Practices
 
-Front-end topics list
+- Data structures & Algorithms
+- Design and Development Principles
+  - GOF Design Patterns
+  - Domain Driven Design
+  - SOLID
+  - KISS
+  - YAGNI
+  - DRY
+- Package Managers
+- Build Tools
+- Linter and Formatters
 
-  * HTML
-    * Basics
-    * Semantic HTML
-    * Forms and Validation
-    * Conventions and Best Practices
-    * Accesibility
-    * Templates
-    * Custom Elements
-    * SEO
-  * CSS
-    * Basic
-    * Layouts
-      * Floats
-      * Positioning
-      * Display
-      * Box Model
-      * CSS Grid
-      * Flex Box
-    * CSS Architecture
-      * BEM
-      * OOCSS
-      * SMACSS
-    * CSS Preprocessors
-      * SASS
-      * PostCSS
-      * Less
-    * Frameworks
-      * CSS Based
-        * Bootstrap
-        * Materialize CSS
-        * Bulma
-      * JavaScript Based
-        * Reactstrap
-        * Material UI
-        * Tailwind CSS
-        * Chakra UI
-    * Responsive
-    * Media Queries
-    * CSS Module
-    * Styled JSX
-    * Emotion
-  * JavaScript
-    * Syntax
-    * Basic Constructs
-    * DOM Manipulation and Shadow DOM
-    * Fetch APIs and AJAX (XHR)
-    * ES6 and Modular JavaScript
-    * TypeScript
-  * Package Managers
-    * npm
-    * yarn
-  * Build Tools
-    * Task Runners
-      * npm scrips
-      * Gulp
-    * Module Bundlers
-      * Webpack
-      * Rollup
-      * Parcel
-  * Linter and Formatters
-    * Prettier
-    * ESLint
-    * StandardJS
-  * Frameworks
-    * Reac.js
-      * Redux
-      * MobX
-    * Angular
-      * RxJS
-      * NgRx
-    * Vue.js
-      * VueX
-  * Progressive Web Apps
-    * Storage
-    * Web Sockets
-    * Service Workers
-    * Location
-    * Notifications
-    * Device Orientation
-    * Payments
-    * Credentials
-    * Performance
-      * PRPL Patterns
-      * RAIL Model
-      * Performance Metrics
-      * Using Lighthouse
-      * Using DevTools
-  * Static Site Generators
-    * Next.js
-    * Gatsby.js
-    * Nuxt.js
-    * Vuepress
-    * Jekyll
-    * Hugo
-    * Gridsome
-  * Server Side Rendering (SSR)
-  * Testing
-  * Performance
-  * Observability
+## 7. Software Architecture
 
-## 4. Back-end
+- Architectural Patterns
+  - Monolithic Apps
+  - Microservices
+  - SOA
+  - CQRS
+  - Event Sourcing
+  - Serverless
+- Mesage Brokers
+- Search Engines
+- Building for Scale
+  - Mitigation Strategies
+  - Understand the Diff.
+  - Migration Strategies
+  - Horizontal vs Vertial Scaling
+- Caching
+  - CDN
+  - Server Side
+  - Client Side
 
-Bront-end topics list
+## 8. Source Code Management (SCM)
+## 9. Source Code Repository Management
+## 10. Test and Verification
+## 11. Artifact or Package Build or Management
+## 12. Configuration Management and Automation
+## 13. API Management
 
-  * Databases
-    * Relational Databases
-      * MySQL
-      * MariaDB
-      * Oracle
-      * DB2
-    * NoSQL Databases
-      * MongoDB
-      * Couchbase
-      * Cassandra
-    * Graph Databases
-      * Neo4j
-    * ORMs
-    * ACID
-    * Transactions
-    * N+1 Problem
-    * Data Replication
-    * Sharding Strategies
-    * CAP Theorem
-    * Database Normalization
-    * Indexes and how they work
-  * APIs
-    * Protocols
-      * REST
-      * JSON APIs
-      * SOAP
-      * gRPC
-      * GraphQL
-    * HATEOAS
-    * WebScokets
-    * Open API Spec and Swagger
-  * Caching
-    * CDN
-    * Server Side
-      * Redis
-      * Memcached
-    * Client Side
-  * Testing
-    * Unit Testing
-    * Integration Testing
-    * Functional Testing
-    * Test Driven Development
-  * Design and Development Principles
-    * Development Patterns
-      * GOF Design Patterns
-      * Domain Driven Design
-      * SOLID
-      * KISS
-      * YAGNI
-      * DRY
-    * Architectural Patterns
-      * Monolithic Apps
-      * Microservices
-      * SOA
-      * CQRS
-      * Event Sourcing
-      * Serverless
-  * Mesage Brokers
-    * RabbitMQ
-    * Kafka
-  * Search Engines
-    * Elasticsearch
-    * Solr
-  * Building for Scale
-    * Mitigation Strategies
-    * Understand the Diff.
-    * Migration Strategies
-    * Horizontal vs Vertial Scaling
-  * Security
-    * Autehntication
-      * Coockie Based
-      * OAuth
-      * Basic Authentication
-      * Token Authentication
-      * JWT
-      * OpenID
-      * SAML
-    * Authorization
-    * Auditory
+- Protocols
+  - REST
+  - JSON APIs
+  - SOAP
+  - gRPC
+  - GraphQL
+- HATEOAS
+- WebScokets
+- Open API Spec and Swagger
 
-## 5. Mobile Web Applications
+## 14. Database Management
 
-Mobile topics list
+- Relational Databases
+- NoSQL Databases
+- Graph Databases
+- ORMs
+- ACID
+- Transactions
+- N+1 Problem
+- Data Replication
+- Sharding Strategies
+- CAP Theorem
+- Database Normalization
+- Indexes and how they work
 
-  * iOS
-  * Android
+## 15. Source Code Quality
+## 16. Release Management
+## 17. Continuous Integration (CI) and Delivery or Deployment (CD)
+## 18. Containerization and Orchestration
+## 19. Infrastructure Provisioning (IaC)
+## 20. Runtime Environments
 
-### 6. Desktop Applications
+- On-prem
+- Cloud
+- IaaS
+- PaaS
+- SaaS
+- Hybrid
 
-Desktop topics list
+## 21. Security, Identity and Compliance
+## 22. Observability (metrics, logs and tracing) and AiOps and Analytics
 
-  * Electron
+- [My Awesome Observability Repo ;-)](https://github.com/adriannovegil/awesome-observability)
 
-## 7. Security
+## 23. Profiling, Performance Analysis and Troubleshooting
 
-### Project Security
-  * Gestión de los repos. Visibilidad, roles, etc.
-  * Gestión del tratamiento de los datos personales
-  * Identify Security Champion
-  * Client Compliance
-  * Pla Continuidad de Negocio
-  * Gestión de la información en la finalización de los proyectos
-    * Almacenamiento de datos del proyecto según regulación
-    * Destrucción de información
-  * Credential Security
+- [My Awesome Profiling Repo ;-)](https://github.com/adriannovegil/awesome-profiling)
 
-### OS Security & Mobile Devices
-  * Antivirus
+## 24. Site Reliability Engineering (SRE)
 
-### Web Security Knowledge
- * HTTPS
- * CORS
- * Content Security Policy
- * OWASP Security Risks
+- [My Awesome SRE Repo ;-)](https://github.com/adriannovegil/awesome-sre)
+- [My Awesome Chaos Repo ;-)](https://github.com/adriannovegil/awesome-chaos-engineering)
 
-## 8. DevOps
+## 25. Backup and Disaster Recovering
+## 26. Contingency Planning
 
-  * Text Manipulation Tools
-    * awk, sed, grep, sort, uniq, cat, cut, echo, fmt, tr, nl, egrep, fgrep, wc
-  * Network
-    * nmap, tcpdump, ping, mtr, traceroute, dig, airmon, airodump, optables, netstat
-  * Bash Scripting
-  * Os Editor
-    * vim, nano,
- * Infrastructure As Code
-  * Containers
-    * Docker
-    * LXC
-  * Container Orchestration
-    * Docker Compose
-    * Kubernetes
-    * Mesos
-    * OpenShift
-    * Docker Swarm
-    * Nomad
-  * Infrastructure Provisioning
-    * Terraform
-    * CloudFormation
-    * Pulumi
-  * Configuration Managerment
-    * Ansible
-    * Salt
-    * Chef
-    * Puppet
+## 27. References
 
-## 9. Runtime
+- https://github.com/donnemartin/system-design-primer
 
-Runtime topis list
+## 28. License
 
-  * Platform
-    * On-prem
-    * Cloud
-    * Hybrid
-    * Serverless
+[![CC0](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0)
 
-## 10. Observability
+## 29. Contributing
 
-Observability topics list
+Contributions welcome! Read the [contribution guidelines](contributing.md) first.
 
-  * General Tools
-  * Collect
-    * Metrics
-    * Events
-    * Logs
-    * Tracing
-    * Logging
-  * Load Generatods & Synthetic Traffic
-  * Transport
-  * Collector
-  * Storage
-  * Visualization
-  * Processing
-    * Processing
-      * Normalization
-      * Timestamping
-      * Aggregation
-      * Inference
-    * Analyze
-      * Anomaly Detection
-      * Pattern Recognition
-    * Act
-      * Alerts
-      * Triggers
-  * Governance
-
-## 11. Profiling, Performance Analysis & Troubleshooting
-
-## 12. site reliability engineering (SRE) & Chaos Engineering
-
-Chaos engineering topics list
-
-  * Fault Injection
-  * Observability
-  * Incident Management Tool
-  * Cost of SEV's
-  * Gamedays
-
-## 13. References
-
- * https://github.com/donnemartin/system-design-primer
+Thank you!
