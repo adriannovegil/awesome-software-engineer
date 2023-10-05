@@ -58,6 +58,7 @@ A curated list of Software Engineer Topics & Tools
   - KISS
   - YAGNI
   - DRY
+- System Design
 - Package Managers
 - Build Tools
 - Linter and Formatters
