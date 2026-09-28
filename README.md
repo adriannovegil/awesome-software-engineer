@@ -2,7 +2,7 @@
 
 A curated list of Software Engineer Topics & Tools
 
-## How to Use This List
+
 
 This is a **situational checklist**, not a study guide. Its purpose is to help you map the landscape quickly when you enter a new team, project, company or codebase.
 
@@ -10,14 +10,13 @@ Each section represents a domain that may or may not be in scope for you. Depend
 
 A useful first pass over the list:
 
-- **Own** — you make decisions here, or you are accountable for this area.
-- **Integrated** — another team or system owns this, but there is a direct dependency or coupling with your work.
-- **Aware** — this exists in your environment; it may become relevant as scope or risks evolve.
+**Own** — you make decisions here, or you are accountable for this area.
+**Integrated** — another team or system owns this, but there is a direct dependency or coupling with your work.
+**Aware** — this exists in your environment; it may become relevant as scope or risks evolve.
 
 Scan the full list when arriving somewhere new. Assign each section one of the three labels. Identify gaps — things clearly in scope with no visible owner, dependencies with no documentation, or risks sitting in areas no one is watching. Use the linked resources to go deeper where it matters.
 
 Revisit periodically to detect scope drift or emerging risks in areas you had previously marked as *aware*.
-
 ## Contents
 
 - [1. Culture and Organization Alignment](#1-culture-and-organization-alignment)
@@ -243,32 +242,44 @@ The high-level structures, patterns and decisions that define how a system is de
 
 If you can only read a few things, start here:
 
+<!--lint ignore double-link-->
 - [Martin Fowler — Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) - Foundational. Why the event log is the truth, complete rebuild, temporal queries and event replay.
+<!--lint ignore double-link-->
 - [EventSourcingDB — Designing Read Models](https://www.eventsourcingdb.io/blog/designing-read-models/) - Very practical for designing rebuildable projections: insists they must be idempotent, deterministic and free of external state dependencies, tied directly to rebuild from scratch.
+<!--lint ignore double-link-->
 - [eventsourcing.readthedocs — Projection](https://eventsourcing.readthedocs.io/en/latest/topics/domain.html#projections) - Excellent for reliable projection operations: saving the materialised view together with the tracking/checkpoint atomically so the projection is a deterministic, recoverable function of the log.
+<!--lint ignore double-link-->
 - [Kurrent / EventStoreDB — Catch-up Subscriptions + Checkpointing](https://developers.eventstore.com/clients/grpc/subscribing-to-streams/) - How to resume, reprocess and avoid restarting from zero after a failure; how to achieve "exactly once" semantics in practice when checkpoint and projection update are stored atomically.
+<!--lint ignore double-link-->
 - [Axon — Replay/Reset of Processors + DLQ + Versioning](https://docs.axoniq.io/reference-guide/axon-framework/events/event-processors) - Among the best for studying how to stop/restart processors, cluster replay, park problematic events and evolve events with upcasting or read-time conversion.
 - [microservices.io — Command-side Replica / CQRS / API Composition / Transactional Outbox / Idempotent Consumer](https://microservices.io/patterns/index.html) - Great catalogue for deciding how to build a cross-domain projection without over-coupling services or breaking consistency.
 
 #### 8.1.2 Fundamentals
 
+<!--lint ignore double-link-->
 - [Martin Fowler — Event Sourcing](https://martinfowler.com/eaaDev/EventSourcing.html) - Foundational resource. Use it to align concepts: event log as source of truth, complete rebuild, temporal queries and replay.
 - [Martin Fowler — Retroactive Event](https://martinfowler.com/eaaDev/RetroactiveEvent.html) - Useful when the problem is not just "rebuild" but also "correct" the past and recalculate consequences. Worth reading if you foresee late events, corrections or reorderings.
+<!--lint ignore double-link-->
 - [CQRS.com — Projections / Read Models / Single Source of Truth](https://cqrs.wordpress.com/) - Good collection for explaining projections as derived, replaceable views designed for querying, and for remembering that in event sourcing the truth remains in the event log.
 
 #### 8.1.3 Reliable Projections and Read Models
 
+<!--lint ignore double-link-->
 - [EventSourcingDB — Designing Read Models](https://www.eventsourcingdb.io/blog/designing-read-models/) - Highly recommended: a read model can be torn down and rebuilt, but the projection must be idempotent, deterministic and free of unnecessary side effects. Also suggests snapshots when volume justifies them.
+<!--lint ignore double-link-->
 - [eventsourcing.readthedocs — Projection](https://eventsourcing.readthedocs.io/en/latest/topics/domain.html#projections) - Explains very well the idea of processing events in order, saving projected state and tracking object in the same transaction, and resuming from the last confirmed point. One of the best vendor-neutral references on "reliable projection".
+<!--lint ignore double-link-->
 - [CQRS.com — Projections](https://cqrs.wordpress.com/) - Good quick read to share within the team: a projection derives state from events, can feed several views and is replaceable.
 
 #### 8.1.4 Replay, Reset and Full Regeneration
 
+<!--lint ignore double-link-->
 - [Axon Framework — Streaming Event Processor / Replaying Events](https://docs.axoniq.io/reference-guide/axon-framework/events/event-processors) - Very useful for studying the stop → reset tokens → start mechanism and how to launch replay from the beginning or from a specific position. Clarifies that in multi-node environments all logical instances must be stopped before reset.
+<!--lint ignore double-link-->
 - [Kurrent / EventStoreDB — Catch-up Subscriptions + Checkpointing](https://developers.eventstore.com/clients/grpc/subscribing-to-streams/) - Strong operational reference for own projections: checkpoint by position in `$all`, resumption after crash and explicit recommendation to store position and processing result atomically.
 - [Event-Driven.io — Rebuilding Event-Driven Read Models in a Safe and Resilient Way](https://event-driven.io/en/projections_and_read_models_in_event_driven_architecture/) - Recent practical deep dive on backfill, safe rebuild, locking and real operation. Very valuable for going from theory to a reproducible process.
 - [Event-Driven.io — On Rebuilding Read Models, Dead-Letter Queues...](https://event-driven.io/en/rebuilding_read_models_skipping_events/) - Complements the above with the problem of problematic events, DLQs and pragmatic decisions when reconstruction hits pathological cases.
-- [Kurrent — User-defined Projections](https://docs.kurrent.io/server/latest/projections.html) - Interesting for seeing how a serious projection engine handles checkpoint thresholds and the cost of traversing irrelevant events during reconstruction.
+- [Kurrent — User-defined Projections](https://docs.kurrent.io/server/v25.1/features/projections/) - Interesting for seeing how a serious projection engine handles checkpoint thresholds and the cost of traversing irrelevant events during reconstruction.
 
 #### 8.1.5 Cross-Domain Projections and Bounded Context Boundaries
 
@@ -293,6 +304,7 @@ If you can only read a few things, start here:
 #### 8.1.8 Snapshots, Performance and When Not to Overuse Them
 
 - [EventSourcingDB — Snapshots and Performance](https://www.eventsourcingdb.io/blog/snapshots-in-event-sourcing/) - Great reference that tones down the hype: snapshots are an optimisation, not the foundation of the model. Proposes treating them as ordinary events and recommends introducing them only with evidence of real replay cost.
+<!--lint ignore double-link-->
 - [Axon — Event Snapshots](https://docs.axoniq.io/reference-guide/axon-framework/events/event-processors/streaming#snapshots) - Good framework guide on when to trigger them, how to configure them and their impact on load and event-sourced repositories.
 - [Kurrent Blog — Snapshots in Event Sourcing](https://www.kurrent.io/blog/snapshots-in-event-sourcing) - Practical complementary resource for evaluating trade-offs and alternatives.
 
@@ -303,7 +315,7 @@ Real implementation docs worth studying for design and operation, regardless of 
 - [Axon Framework Docs](https://docs.axoniq.io/reference-guide/) - Excellent for processors, replay, DLQ, snapshots, versioning and upcasting.
 - [EventSourcingDB Docs](https://www.eventsourcingdb.io/docs/) - Recommended for clarity on read models, snapshots and versioning. Great for teams wanting criteria over framework magic.
 - [Kurrent / EventStoreDB Docs](https://developers.eventstore.com/) - Strong reference for subscriptions, checkpointing, global streams and projections. Very useful if operational rebuild is a concern.
-- [Eventuous — Checkpoints](https://eventuous.dev/docs/subscriptions/checkpoint/) - Good framework doc for understanding offset/checkpoint stores and subscriptions over the "all stream".
+- [Eventuous — Checkpoints](https://eventuous.dev/dotnet/subscriptions/checkpoint/) - Good framework doc for understanding offset/checkpoint stores and subscriptions over the "all stream".
 
 #### 8.1.10 Standards and Formats
 
@@ -318,7 +330,9 @@ Not specific to Event Sourcing, but very helpful for contracts and interoperabil
 Resources for designing large-scale distributed systems: understanding how to reason about scale, availability, consistency and the trade-offs behind the architectural choices that underpin real-world platforms.
 
 - [System Design Primer (donnemartin)](https://github.com/donnemartin/system-design-primer) - The most comprehensive free resource for system design. Covers scalability, load balancing, caching, databases, NoSQL, consistency patterns, communication protocols and classic interview questions with visual diagrams and Anki flashcards.
+<!--lint ignore double-link-->
 - [System Design Interview Vol. 1 & 2 (Alex Xu)](https://bytebytego.com/) - The most widely read books for system design interviews. Vol. 1 covers URL shorteners, CDN, chat, notification systems and YouTube. Vol. 2 tackles proximity services, ad click aggregation, real-time gaming leaderboards and hotel reservation systems. Accessible and highly visual.
+<!--lint ignore double-link-->
 - [ByteByteGo (Alex Xu)](https://bytebytego.com/) - Newsletter and video platform with high-quality visual explanations of system design concepts and real-world architectures. An excellent complement to the books for staying current.
 - [High Scalability](http://highscalability.com/) - Long-running blog publishing architectural teardowns of real systems: how Netflix handles failover, how Amazon scales its order pipeline, how Twitter redesigned its fanout. Indispensable for grounding theory in production reality.
 - [Grokking the System Design Interview (Educative)](https://www.educative.io/courses/grokking-the-system-design-interview) - Structured course with a repeatable framework: requirements → capacity estimation → API design → data model → component design. Widely used for interview preparation across all experience levels.
@@ -421,6 +435,7 @@ Core standards that underpin most API design guidelines.
 - [URI Generic Syntax — RFC 3986](https://www.rfc-editor.org/rfc/rfc3986) - Indispensable for designing paths, IDs, percent-encoding and avoiding common URL-modelling mistakes.
 - [Problem Details for HTTP APIs — RFC 9457](https://www.rfc-editor.org/rfc/rfc9457) - The recommended standard for structured, machine-readable HTTP error responses. Adopted explicitly by Zalando.
 - [OAuth 2.0 — RFC 6749](https://www.rfc-editor.org/rfc/rfc6749) - The base authorization framework.
+<!--lint ignore double-link-->
 - [OAuth 2.0 Security Best Current Practice — RFC 9700](https://www.rfc-editor.org/rfc/rfc9700) - Updated security guidance that deprecates insecure modes; deserves more attention than the original framework today.
 - [OpenID Connect Core 1.0](https://openid.net/specs/openid-connect-core-1_0.html) - Complements OAuth 2.0 with an interoperable identity layer when APIs need end-user authentication/identity.
 - [BCP 47 Language Tags — RFC 5646](https://www.rfc-editor.org/rfc/rfc5646) - Defines language tags. Not optional if you take `Accept-Language`, error localisation or language negotiation seriously.
@@ -459,8 +474,8 @@ Concepts that apply regardless of the specific database technology you choose.
 #### Transactions and Isolation Levels
 
 - [PostgreSQL — Transaction Isolation](https://www.postgresql.org/docs/current/transaction-iso.html) - Concrete, well-written explanation of Read Committed, Repeatable Read and Serializable as implemented in a real database. Useful even if you don't use PostgreSQL.
+<!--lint ignore double-link-->
 - [Martin Kleppmann — Designing Data-Intensive Applications, Chapter 7](https://dataintensive.net/) - Covers serialisability, snapshot isolation, write skew, phantoms and the practical differences between textbook isolation levels and real implementations.
-- [Fauna — A Comparison of Database Transaction Models](https://fauna.com/blog/a-comparison-of-database-transaction-models) - Good comparative overview of how different databases approach transactions differently.
 
 #### The N+1 Query Problem
 
@@ -483,6 +498,7 @@ Concepts that apply regardless of the specific database technology you choose.
 
 #### Data Replication and Sharding
 
+<!--lint ignore double-link-->
 - [Martin Kleppmann — Designing Data-Intensive Applications, Chapters 5 & 6](https://dataintensive.net/) - The definitive modern treatment of replication (single-leader, multi-leader, leaderless) and partitioning (range, hash, composite). Explains trade-offs clearly.
 - [Citus Data — Distributed PostgreSQL](https://www.citusdata.com/blog/) - Practical blog series on sharding strategies, co-location, distributed queries and operational trade-offs.
 
@@ -530,7 +546,7 @@ The strategies, tooling and automation for getting built artifacts into running 
 - [Martin Fowler — Blue Green Deployment](https://martinfowler.com/bliki/BlueGreenDeployment.html) - The classic pattern for zero-downtime deployments: run two identical environments and switch traffic between them.
 - [Danilo Sato — Canary Releases](https://martinfowler.com/bliki/CanaryRelease.html) - Gradually routing a percentage of traffic to a new version to detect problems before full rollout. Essential for reducing blast radius.
 - [GitOps Principles (OpenGitOps)](https://opengitops.dev/) - Declarative, versioned, automated and continuously reconciled deployments using Git as the single source of truth for desired state.
-- [Weaveworks — Guide to GitOps](https://www.weave.works/technologies/gitops/) - Practical guide to implementing GitOps with tools like Flux and Argo CD.
+- [Weaveworks — Guide to GitOps](https://docs.gitops.weaveworks.org/) - Practical guide to implementing GitOps with tools like Flux and Argo CD.
 
 ## 19. Continuous Integration (CI) and Delivery or Deployment (CD)
 
@@ -591,6 +607,7 @@ The practices, standards and tools for protecting systems, data and users. This 
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/) - The most widely referenced list of critical web application security risks. Every developer and architect should know these and understand mitigations.
 - [OWASP Application Security Verification Standard (ASVS)](https://owasp.org/www-project-application-security-verification-standard/) - A framework of security requirements and controls for designing, developing and testing secure web applications. More actionable than the Top 10 alone.
 - [Zero Trust Architecture — NIST SP 800-207](https://csrc.nist.gov/publications/detail/sp/800-207/final) - The principle of "never trust, always verify". Assumes breach and verifies every request as though it originates from an untrusted network.
+<!--lint ignore double-link-->
 - [OAuth 2.0 Security BCP — RFC 9700](https://www.rfc-editor.org/rfc/rfc9700) - Updated security guidance for OAuth 2.0 that deprecates insecure flows. The practical companion to the OAuth 2.0 framework.
 - [CIS Benchmarks](https://www.cisecurity.org/cis-benchmarks) - Consensus-based security configuration guidelines for operating systems, cloud providers, databases and middleware. A concrete baseline for hardening.
 
@@ -630,6 +647,7 @@ The discipline of applying software engineering practices to operations problems
 - [Google SRE Workbook](https://sre.google/workbook/table-of-contents/) - The practical companion to the SRE Book. More hands-on with worked examples for implementing SLOs, alerting and incident management.
 - [SLO — Service Level Objectives (Google)](https://sre.google/sre-book/service-level-objectives/) - Understanding the relationship between SLIs, SLOs and SLAs is fundamental. Error budgets derived from SLOs are the mechanism that balances reliability with feature velocity.
 - [Incident Management Guide (incident.io)](https://incident.io/guide/) - A comprehensive guide to incident response: roles, communication, severity levels, post-mortems and blameless culture.
+<!--lint ignore double-link-->
 - [PagerDuty Incident Response Guide](https://response.pagerduty.com/) - PagerDuty's open-source guide covering the full incident lifecycle: detection, escalation, command structure, stakeholder communication and post-mortems. Practical companion to the Google SRE books.
 
 - [My Awesome SRE Repo ;-)](https://github.com/adriannovegil/awesome-sre)
@@ -653,6 +671,7 @@ The preparation for foreseeable failure scenarios before they happen. This inclu
 
 - [Google SRE Book — Being On-Call](https://sre.google/sre-book/being-on-call/) - The operational side of contingency: how to structure on-call rotations, manage cognitive load and ensure incident readiness.
 - [Principles of Chaos Engineering](https://principlesofchaos.org/) - The manifesto behind chaos engineering: build confidence in system behaviour by proactively injecting failures in controlled conditions.
+<!--lint ignore double-link-->
 - [PagerDuty — Incident Response Guide](https://response.pagerduty.com/) - Particularly useful here for the preparation and readiness aspects: on-call schedules, runbook templates, escalation policies and the pre-incident practices that reduce MTTR before an incident occurs.
 - [Game Days (AWS)](https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.gameday.en.html) - The practice of simulating failures in production-like environments to validate runbooks and team readiness.
 
@@ -662,6 +681,7 @@ The techniques, platforms and practices for extracting insights from data at sca
 
 ### 29.1 Fundamental Principles
 
+<!--lint ignore double-link-->
 - [Martin Kleppmann — Designing Data-Intensive Applications](https://dataintensive.net/) - The best single book for understanding data systems end to end: storage engines, encoding, replication, partitioning, batch processing and stream processing.
 - [The Data Warehouse Toolkit (Ralph Kimball)](https://www.kimballgroup.com/data-warehouse-business-intelligence-resources/books/) - The foundational text on dimensional modelling for analytics: star schemas, slowly changing dimensions and ETL design.
 - [Fundamentals of Data Engineering (Reis & Housley)](https://www.oreilly.com/library/view/fundamentals-of-data/9781098108298/) - Modern overview of the data engineering lifecycle: generation, storage, ingestion, transformation, serving and the undercurrents (security, data management, orchestration).
